@@ -19,7 +19,7 @@ echo "Installing Baseline demo..."
 pushd /home/$LIBPANDA_USER/catkin_ws
 runuser -l $LIBPANDA_USER -c 'source /opt/ros/noetic/setup.bash && cd catkin_ws && catkin_make'
 source devel/setup.sh
-rosrun robot_upstart install gps2vsl/launch/${LAUNCH_FILE} --user root
+rosrun robot_upstart install "cs3861-baseline/launch/${LAUNCH_FILE}" --user root
 
 echo "Enabling can_to_ros startup script"
 sudo systemctl daemon-reload
