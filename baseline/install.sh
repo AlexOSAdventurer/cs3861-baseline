@@ -1,29 +1,20 @@
 #!/bin/bash
 
 echo "=========================="
-echo "Installing App middleway"
+echo "Installing App Baseline"
 
 # Here is where we perform installation of scripts, services, etc.
-echo " - Installing ROS packages for VSL..."
+echo " - Installing ROS packages..."
 
 LIBPANDA_SRC=$(cat /etc/libpanda.d/libpanda_src_dir)
 LIBPANDA_USER=$(cat /etc/libpanda.d/libpanda_usr)
-LAUNCH_FILE=middleway_vsl.launch
+LAUNCH_FILE=baseline.launch
 
 source /home/$LIBPANDA_USER/.bashrc
 
-# if [ -d /home/$LIBPANDA_USER/strym ]; then
-#     pushd /home/$LIBPANDA_USER/strym
-#     git pull
-# else
-#     pushd /home/$LIBPANDA_USER/
-#     git clone https://github.com/jmscslgroup/strym
-# fi
-# popd
+runuser -l $LIBPANDA_USER -c /etc/libpanda.d/apps/baseline/installRosPackages.sh
 
-runuser -l $LIBPANDA_USER -c /etc/libpanda.d/apps/middleway_vsl/installRosPackagesForMidVsl.sh
-
-echo "Installing Middleway VSL demo..."
+echo "Installing Baseline demo..."
 # runuser -l $LIBPANDA_USER -c /etc/libpanda.d/apps/vsl/installMidVslController.sh
 pushd /home/$LIBPANDA_USER/catkin_ws
 runuser -l $LIBPANDA_USER -c 'source /opt/ros/noetic/setup.bash && cd catkin_ws && catkin_make'
@@ -32,6 +23,6 @@ rosrun robot_upstart install gps2vsl/launch/${LAUNCH_FILE} --user root
 
 echo "Enabling can_to_ros startup script"
 sudo systemctl daemon-reload
-sudo systemctl enable gps2vsl
+sudo systemctl enable baseline
 popd
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"

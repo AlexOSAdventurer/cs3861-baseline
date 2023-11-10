@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>gps2vsl</name>
+  <name>baseline</name>
   <version>0.2.0</version>
-  <description>The gps2vsl package</description>
+  <description>The baseline package</description>
 
-  <maintainer email="matthew.nice@vanderbilt.edu">Matthew Nice</maintainer>
+  <maintainer email="william.a.richardson@vanderbilt.edu">Alex Richardson</maintainer>
 
   <license>TODO</license>
 

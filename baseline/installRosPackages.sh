@@ -7,7 +7,7 @@ if [[ $EUID == 0 ]];
   exit
 fi
 
-echo "Installing/Updating VSL ROS packages"
+echo "Installing/Updating Baseline ROS packages"
 
 source ~/.bashrc
 
@@ -26,17 +26,11 @@ echo "Regenerating CanToRos"
 cd ~/catkin_ws/src/can_to_ros/scripts
 echo y | ./regenerateCanToRos.sh
 
-
 # Build:
 source ~/catkin_ws/devel/setup.sh
 cd ~/catkin_ws
 catkin_make
 
-
-echo "Enabling can_to_ros startup script"
 sudo systemctl daemon-reload
-sudo systemctl enable gps2vsl
-
-
 
 echo "----------------------------"

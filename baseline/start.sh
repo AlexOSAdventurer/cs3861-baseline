@@ -1,8 +1,7 @@
 #!/bin/bash
 
 echo "=========================="
-echo "Starting App 'middleway' for Middleway VSL"
+echo "Starting App 'baseline' for Baseline"
 
-
-systemctl start gps2vsl
+systemctl start baseline
 systemctl start rosnodeChecker
