@@ -12,10 +12,9 @@
 
 
 <node pkg="can_to_ros" type="vehicle_interface" name="vehicle_interface" output="screen" respawn="true" respawn_delay="2" />
-  <node pkg="can_to_ros" type ="subs" name="subs" output="screen" if="$(arg hwil)" />
-  <include file="$(find can_to_ros)launch/safety_checks.launch" />
+<node pkg="can_to_ros" type ="subs" name="subs" output="screen" if="$(arg hwil)" />
+<include file="$(find can_to_ros)launch/safety_checks.launch" />
 
- 	<node pkg="can_to_ros" type ="rosbag_record.sh" name="bashscript2" output="screen" args="$(arg description) $(arg hwil)" />
-</node>
+<node pkg="can_to_ros" type ="rosbag_record.sh" name="bashscript2" output="screen" args="$(arg description) $(arg hwil)" />
 
 </launch>
