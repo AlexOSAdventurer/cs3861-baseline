@@ -16,5 +16,6 @@
 <include file="$(find can_to_ros)launch/safety_checks.launch" />
 
 <node pkg="can_to_ros" type ="rosbag_record.sh" name="bashscript2" output="screen" args="$(arg description) $(arg hwil)" />
+<node pkg="baseline" type ="baseline" name="basey" output="screen" if="$(arg hwil)" />
 
 </launch>
