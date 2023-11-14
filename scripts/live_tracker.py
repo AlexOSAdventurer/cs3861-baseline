@@ -10,16 +10,7 @@ import requests
 import time
 import bisect
 import numpy as np
- $VIN = trim($str_arr['1']);
-                $GpsTime = trim($str_arr['2']);
-                $SysTime = trim($str_arr['3']);
-                $Latitude = trim($str_arr['4']);
-                $Longitude = trim($str_arr['5']);
-                $Status = trim($str_arr['6']);
-                $CANSpeed = trim($str_arr['7']);
-                $CANAcceleration = trim($str_arr['8']);
-                $ACCStatus = trim($str_arr['9']);
-                $ACCSpeedSetting = trim($str_arr['10']);
+
 velocity_topic = "/car/state/vel_x"
 acceleration_topic = "/car/state/imu_x"
 acc_speed_topic = "acc/set_speed2"
