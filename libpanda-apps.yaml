@@ -11,3 +11,5 @@ apps:
           repo: can_to_ros
         - owner: AlexOSAdventurer
           repo: cs3861-baseline
+        - owner: AlexOSAdventurer
+          repo: cs3891-controller
