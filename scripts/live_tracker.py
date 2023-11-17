@@ -94,13 +94,13 @@ def getGPSResultStr():
     global latitude
     global longitude
     global status
-	return ",".join(['{}'.format(int(gpstime.to_sec() * 1000)), '{}'.format(int(systime.to_sec() * 1000)), str(latitude), str(longitude), str(status)])
+    return ",".join(['{}'.format(int(gpstime.to_sec() * 1000)), '{}'.format(int(systime.to_sec() * 1000)), str(latitude), str(longitude), str(status)])
 
 def getCANResultStr():
     global velocity
     global acceleration
     global acc_status
-	global acc_speed
+    global acc_speed
     acc_status_int = {25: 1}.get(acc_status, 0)
     return ",".join([str(velocity), str(acceleration), str(acc_status_int), str(acc_speed)])
 

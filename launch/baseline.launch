@@ -16,7 +16,7 @@
 <include file="$(find can_to_ros)launch/safety_checks.launch" />
 
 <node pkg="can_to_ros" type ="rosbag_record.sh" name="bashscript2" output="screen" args="$(arg description) $(arg hwil)" />
-<node pkg="baseline" type ="baseline.py" name="basey" output="screen" if="$(arg hwil)" />
+<node pkg="baseline" type ="lead_car_receiver.py" name="receiver" output="screen" if="$(arg hwil)" />
 <node pkg="baseline" type ="live_tracker.py" name="tracker" output="screen" if="$(arg hwil)" />
 <node pkg="controller" type="controller" name="controller" output="screen" if="$(arg hwil)" />
 </launch>
