@@ -13,3 +13,6 @@ apps:
           repo: cs3861-baseline
         - owner: AlexOSAdventurer
           repo: cs3891-controller
+        - owner: jmscslgroup
+          repo: cbf
+          branch_or_hash: original_CBF_implementation_2021
