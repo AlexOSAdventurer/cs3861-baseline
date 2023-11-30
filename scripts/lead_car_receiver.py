@@ -22,7 +22,7 @@ class LeadCarReceiver:
         self.rate = rospy.Rate(1)
         while self.vin is None:
             try:
-                self.vin = getVIN()
+                self.vin = self.getVIN()
             except Exception as e:
                 print(e)
                 traceback.print_exc()
@@ -37,7 +37,7 @@ class LeadCarReceiver:
         return res
 
     def getVIN(self):
-        return readAllFile(vin_path)
+        return self.readAllFile(vin_path)
 
     def loop(self):
         while not rospy.is_shutdown():
