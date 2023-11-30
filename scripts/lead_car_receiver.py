@@ -32,17 +32,17 @@ class LeadCarReceiver:
     def loop(self):
         while not rospy.is_shutdown():
             try:
-            json_string = requests.get(web_path)
-            data = json.loads(json_string)
-            if data["lead_car"] is not None:
-               lead_vin = data["lead_car"]["vin"]
-               lead_velocity = data["lead_car"]["velocity"]
-               lead_systime = data["lead_car"]["systime"]
-               self.pilot_velocity_pub.publish(lead_velocity)
-               self.control_active_pub.publish(self.vin != lead_vin)
-            else:
-               self.pilot_velocity_pub.publish(0)
-               self.control_active_pub.publish(False)
+                json_string = requests.get(web_path)
+                data = json.loads(json_string)
+                if data["lead_car"] is not None:
+                    lead_vin = data["lead_car"]["vin"]
+                    lead_velocity = data["lead_car"]["velocity"]
+                    lead_systime = data["lead_car"]["systime"]
+                    self.pilot_velocity_pub.publish(lead_velocity)
+                    self.control_active_pub.publish(self.vin != lead_vin)
+                else:
+                    self.pilot_velocity_pub.publish(0)
+                    self.control_active_pub.publish(False)
 
             except Exception as e:
                 print(e)
