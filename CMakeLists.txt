@@ -44,10 +44,6 @@ include_directories(
 ## Install ##
 #############
 
-catkin_install_python(PROGRAMS scripts/baseline.py
-DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
-
 catkin_install_python(PROGRAMS scripts/live_tracker.py
 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
