@@ -5,6 +5,7 @@ from std_msgs.msg import Float64, Int16, String
 import traceback
 import requests
 import time
+import os
 import json
 
 pilot_velocity_topic = "/pilot_vel"
