@@ -19,6 +19,6 @@
 <node pkg="baseline" type ="lead_car_receiver.py" name="receiver" output="screen" if="$(arg hwil)" />
 <node pkg="baseline" type ="live_tracker.py" name="tracker" output="screen" if="$(arg hwil)" />
 <node pkg="controller" type="controller" name="controller" output="screen" if="$(arg hwil)" />
-<node pkg="cbf" type="cbf" name="cbf" if="$(eval not readonly and hwil)">
+<node pkg="cbf" type="cbf" name="cbf" if="$(eval not readonly and hwil)" />
 
 </launch>
