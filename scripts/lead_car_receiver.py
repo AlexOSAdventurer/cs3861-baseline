@@ -19,7 +19,7 @@ class LeadCarReceiver:
         rospy.init_node('LeadCarReceiver', anonymous=True)
 
         self.pilot_velocity_pub = rospy.Publisher(pilot_velocity_topic, Float64, queue_size=1000)
-        self.control_active_pub = rospy.Publisher(control_active_topic, Float64, queue_size=1000)
+        self.control_active_pub = rospy.Publisher(control_active_topic, Bool, queue_size=1000)
 
         self.rate = rospy.Rate(1)
         while self.vin is None:
