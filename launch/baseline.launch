@@ -18,8 +18,8 @@
 <node pkg="can_to_ros" type ="rosbag_record.sh" name="bashscript2" output="screen" args="$(arg description) $(arg hwil)" />
 <node pkg="baseline" type ="lead_car_receiver.py" name="receiver" output="screen" if="$(arg hwil)" />
 <node pkg="baseline" type ="live_tracker.py" name="tracker" output="screen" if="$(arg hwil)">
-	<remap from="/car/gps/fix" to="/gps_fix" />
-	<remap from="/car/gps/fix_time" to="/gps_fix_time" />
+	<remap to="/car/gps/fix" from="/gps_fix" />
+	<remap to="/car/gps/fix_time" from="/gps_fix_time" />
 </node>
 <node pkg="controller" type="controller" name="controller" output="screen" if="$(arg hwil)">
 	<remap from="cmd_accel" to="cmd_accel_pre"/>
