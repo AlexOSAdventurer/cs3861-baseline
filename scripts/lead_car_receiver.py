@@ -43,7 +43,7 @@ class LeadCarReceiver:
     def loop(self):
         while not rospy.is_shutdown():
             try:
-                json_string = requests.get(web_path)
+                json_string = requests.get(web_path).content
                 data = json.loads(json_string)
                 if data["lead_car"] is not None:
                     lead_vin = data["lead_car"]["vin"]
