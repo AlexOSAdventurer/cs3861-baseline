@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import rospy
-from std_msgs.msg import Float64, Int16, String
+from std_msgs.msg import Float64, Int16, String, Bool
 import traceback
 import requests
 import time
@@ -19,6 +19,7 @@ class LeadCarReceiver:
         rospy.init_node('LeadCarReceiver', anonymous=True)
 
         self.pilot_velocity_pub = rospy.Publisher(pilot_velocity_topic, Float64, queue_size=1000)
+        self.control_active_pub = rospy.Publisher(control_active_topic, Float64, queue_size=1000)
 
         self.rate = rospy.Rate(1)
         while self.vin is None:

@@ -51,11 +51,12 @@ def velocity_callback(data):
     velocity = data.data
     can_update_time = rospy.Time.now()
 
-def acceleration_callback(data):
+'''def acceleration_callback(data):
     global acceleration
     global can_update_time
     acceleration = data.data
     can_update_time = rospy.Time.now()
+'''
 
 def acc_speed_callback(data):
     global acc_speed
@@ -109,8 +110,8 @@ class LiveTracker:
         global vin
         rospy.init_node('LiveTracker', anonymous=True)
         rospy.Subscriber(velocity_topic, Float64, velocity_callback)
-        rospy.Subscriber(acceleration_topic, Float64, acceleration_callback)
-        rospy.Subscriber(acc_speed_topic, Int16, acc_speed_callback)
+        #rospy.Subscriber(acceleration_topic, Float64, acceleration_callback)
+        rospy.Subscriber(acc_speed_topic, Float64, acc_speed_callback)
         rospy.Subscriber(acc_status_topic, Int16, acc_status_callback)
         rospy.Subscriber(gps_fix_topic, NavSatFix, gps_fix_callback)
         rospy.Subscriber(gps_fix_time_reference_topic, TimeReference, gps_fix_time_reference_callback)
