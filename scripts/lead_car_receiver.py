@@ -29,6 +29,16 @@ class LeadCarReceiver:
                 print("Cannot get VIN at this time!")
                 time.sleep(1.0)  # Wait 1 second hard-coded between checking for the VIN file
 
+    def readAllFile(self, path):
+        assert os.path.exists(path), path + " file does not exist apparently!"
+        file = open(path, mode='r')
+        res = file.read()
+        file.close()
+        return res
+
+    def getVIN(self):
+        return readAllFile(vin_path)
+
     def loop(self):
         while not rospy.is_shutdown():
             try:
